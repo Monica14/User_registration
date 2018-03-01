@@ -1,0 +1,17 @@
+{
+	"__v" : NumberInt("0"),
+	"_id" : "1519127344537",
+	"city" : "Mumbai",
+	"name" : "New User",
+	"nickname" : "Developer",
+	"phone_number" : "7418529632"
+},
+{
+	"__v" : NumberInt("0"),
+	"_id" : "1519127710888",
+	"city" : "Pune",
+	"email_id" : "new@gmail.com",
+	"name" : "new",
+	"nickname" : "user",
+	"phone_number" : "7894561236"
+},

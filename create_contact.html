@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/3.3/examples/signin/signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="https://getbootstrap.com/docs/3.3/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/snapshot/angular-messages.js"></script>
+    <script src="../User_registration/public/javascripts/angular_custom.js"></script>
+    <style>
+        p {
+            color: red
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="user_details" ng-controller="user_data">
+
+    <div class="container">
+
+        <form class="form-signin" name="formValidation">
+            <h3 class="form-signin-heading">Create Contact</h3>
+            <label for="inputEmail" class="sr-only">Full name</label>
+            <input type="text" id="name" class="form-control" ng-model="name" required ng-pattern="/^[a-zA-Z]/" name="name"
+                placeholder="Full Name">
+            <br>
+            <div ng-messages="formValidation.name.$error" ng-if="formValidation.name.$touched">
+                <p ng-message="required">Providing a name is mandatory.</p>
+                <p ng-message="pattern">Please enter only alphabhets for name.</p>
+            </div>
+            <label for="inputEmail" class="sr-only">Nickname</label>
+            <input type="text" id="nickname" class="form-control" name="nickname" required ng-model="nickname" placeholder="nickname">
+            <br>
+            <div ng-messages="formValidation.nickname.$error" ng-if="formValidation.nickname.$touched">
+                <p ng-message="required">Providing a nickname is mandatory.</p>
+            </div>
+            <label class="sr-only">Email</label>
+            <input type="email" name="email_id" class="form-control" ng-model="email_id" required placeholder="Email ID">
+            <br>
+            <div ng-messages="formValidation.email_id.$error" ng-if="formValidation.email_id.$touched">
+                <p ng-message="email">Please enter a valid email address.</p>
+                <p ng-message="required">Providing an email is mandatory.</p>
+            </div>
+            <label for="inputEmail" class="sr-only">Phone Number</label>
+            <input type="text" id="phone_number" class="form-control" name="phone_number" required ng-pattern="/^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/"
+                ng-model="phone_number" placeholder="Phone Number">
+            <br>
+            <div ng-messages="formValidation.phone_number.$error" ng-if="formValidation.phone_number.$touched">
+                <p ng-message="required">Providing a phone number is mandatory.</p>
+                <p ng-message="pattern">Provide valid phone number.</p>
+            </div>
+            <label for="inputEmail" class="sr-only">City</label>
+            <input type="text" id="city" class="form-control" ng-model="city" name="city" required ng-pattern="/^[a-zA-Z]/" placeholder="City">
+            <br>
+            <div ng-messages="formValidation.city.$error" ng-if="formValidation.city.$touched">
+                <p ng-message="required">Providing a city is mandatory.</p>
+                <p ng-message="pattern">Provide valid city.</p>
+            </div>
+            
+            <br>
+            <div ng-messages="formValidation.inputPassword.$error" ng-if="formValidation.inputPassword.$touched">
+                <!-- /**
+                * (?=.*\d)         should contain at least 1 digit
+                * (?=.*\W)    should contain at least 1 special characters
+                * (?=.*[a-zA-Z])   should contain at least 1 alphabetic character
+                * (?!.*\s)         should not contain any blank space
+                */ -->
+                <p ng-message="required">Providing a password is mandatory.</p>
+                <p ng-message="pattern">Password must be a combination of one capital letter,one small letter,one digits and one special character.</p>
+                <p ng-message="minlength">Minimum 8 characters are required for password</p>
+                <p ng-message="maxlength">Maximum 15 characters are allowed for password</p>
+            </div>
+            
+            <input class="btn btn-lg btn-primary btn-block" type="button" ng-click="save_contact()" value="Create">
+            <input type="button" value="Go To List" ng-click="contact_list()" class="btn btn btn-lg btn-primary btn-block">
+        </form>       
+
+    </div>
+    <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>

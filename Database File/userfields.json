@@ -1,0 +1,9 @@
+{
+	"__v" : NumberInt("0"),
+	"_id" : "1519127344524",
+	"email_id" : "newuser@gmail.com",
+	"full_name" : "Monica",
+	"password" : "$2a$10$btVinSnk4n5vYzx0TOBZXuVm0ZkN/76M0gniwDCGAkKVqj8yZZzEu",
+	"phone_number" : "7894561237",
+	"username" : "Monica"
+},

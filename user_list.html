@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://localhost/User_registration/public/stylesheets/signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="https://getbootstrap.com/docs/3.3/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/snapshot/angular-messages.js"></script>
+    <script src="../User_registration/public/javascripts/angular_custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->  
+</head>
+
+<body ng-app="user_details" ng-controller="user_data" style="background-color:none">
+        <input type="button" value="Logout" ng-click="logout()" style="float:right;margin-right: 119px;" class="btn btn-danger">
+    <div class="container">
+        Search Contact By City : 
+        <input type="text" ng-model="search"><input type="button" class="btn" value="Add New" ng-click="create_contact()" style="float:right;margin-right: 54px;"><br>
+        <!-- <div class="table-responsive"> -->
+            <table class="table table-bordered" style="margin-top: 36px;">
+                <thead>
+                    <th>Full Name</th>
+                    <th>Nickname</th>
+                    <th>Email ID</th>
+                    <th>Phone Number</th>
+                    <th>City</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in user_details | filter:search">
+                        <td>{{item.name}}</td>
+                        <td>{{item.nickname}}</td>
+                        <td>{{item.email_id}}</td>
+                        <td>{{item.phone_number}}</td>
+                        <td>{{item.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        <!-- </div> -->
+
+    </div>
+    <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>
